@@ -15,4 +15,4 @@ $('head').append('<link rel="stylesheet" href="https://use.fontawesome.com/relea
 // append style tag to the end of head with custom styling
 $('head').append('<style type="text/css" id="userStyle"></style>');
 // styling input onblur
-$("#company").focusout(function () { $('.controls').append('<i class="fas fa-check"></i>');$('#userStyle').append('#company:valid {background-color: lightgreen}'); $('#userStyle').append('.controls {position: relative}');$('#userStyle').append('.fa-check {position: absolute; right: 10px; top: 50%; transform: translateY(-50%)}');});
+$("input").focusout(function () { $('this').parent().append('<i class="fas fa-check"></i>');$('#userStyle').append('#company:valid {background-color: lightgreen}'); $('#userStyle').append('.controls {position: relative}');$('#userStyle').append('.fa-check {position: absolute; right: 10px; top: 50%; transform: translateY(-50%)}');});
