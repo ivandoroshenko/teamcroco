@@ -16,12 +16,12 @@ $('input').attr("required", true)
 $('head').append('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">');
 // append style tag to the end of head with custom styling
 $('head').append('<style type="text/css" id="userStyle"></style>');
-
-// get all necessary inputs inside the fieldset
-var inputList = $$('fieldset input');
-// put inputs into the loop, get their "id" and set them as classes to parent "divs" 
-for (var i = 0; i <= inputList.length; i++) {var input = $(inputList)[i];var inputId = $(input).attr('id'); var inputParent = $(input).parent(); var inputParentClass = $(inputParent).attr('class'); inputParentClass = inputId; $('input').focus(function () {if ($(input).closest('fieldset'))});}
+// $(function () {/*get all necessary inputs inside the fieldset */   
+//     var inputList = $$('fieldset input');/* // put inputs into the loop, get their "id" and set them as classes to parent "divs" */for (var i = 0; i <= inputList.length; i++) { var input = $(inputList)[i]; var inputId = $(input).attr('id'); var inputParent = $(input).parent(); var inputParentClass = $(inputParent).attr('class'); inputParentClass = inputId; $(this).focus(function () { console.log($(this))}); }
+// });
 
     // styling input onblur
-    $("#company").focusout(function () {var parent = $(this).parent.css();$('.controls').append('<i class="fas fa-check"></i>');$('#userStyle').append('#company:valid {background-color: lightgreen}'); $('#userStyle').append('.controls {position: relative}');$('#userStyle').append('.fa-check {position: absolute; right: 10px; top: 50%; transform: translateY(-50%)}');});
-    $('input').focus(function () { if ($(this).closest('fieldset')) { var inputId = $(this).attr('id'); var inputParent = $(this).parent(); var inputParentClass = $(inputParent).attr('class'); inputParentClass = inputId; console.log(inputParentClass)}})
+    // $("#company").focusout(function () {var parent = $(this).parent.css();$('.controls').append('<i class="fas fa-check"></i>');$('#userStyle').append('#company:valid {background-color: lightgreen}'); $('#userStyle').append('.controls {position: relative}');$('#userStyle').append('.fa-check {position: absolute; right: 10px; top: 50%; transform: translateY(-50%)}');});
+    
+$('input').focusout(function () { if ($(this).closest('fieldset')) { var inputId = $(this).attr('id'); var inputParent = $(this).parent(); var inputParentClass = $(inputParent).attr('class'); inputParentClass = inputId; $('.validParent').append('<i class="fas fa-check"></i>'); $('.invalidParent').append('<i class="fas fa-times"></i>'); $('#userStyle').append('.controls {position: relative}'); $('#userStyle').append('.fa-check {position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: red}'); $('#userStyle').append('.valid{background-color: lightgreen}'); } if ($(this).hasClass('valid')) { console.log('valid'); } else console.log(this) })
+
