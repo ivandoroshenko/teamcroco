@@ -28,13 +28,13 @@ inputId = '#' + input.attr('id');
 var inputSelector = $(inputId);
 inputParent = (inputSelector.parent());
 // valid case
-inputParent.addClass('validParent');
-inputSelector.addClass('validInput');
-$('.validParent').append('<i class="fas fa-check"></i>');
-$('#userStyle').append('::-webkit-input-placeholder {color: #237bb1!important;}');
+// inputParent.addClass('validParent');
+// inputSelector.addClass('validInput');
+// $('.validParent').append('<i class="fas fa-check"></i>');
+// $('#userStyle').append('::-webkit-input-placeholder {color: #237bb1!important;}');
 // invalid case
-// inputSelector.addClass('invalidInput');
-// inputParent.addClass('invalidParent');
-// $('.invalidParent').append('<i class="fas fa-times"></i>');
-// $('#userStyle').append('::-webkit-input-placeholder {color: #fff!important;}');
+inputSelector.addClass('invalidInput');
+inputParent.addClass('invalidParent');
+$('.invalidParent').append('<i class="fas fa-times"></i>');
+$('#userStyle').append('::-webkit-input-placeholder {color: #fff!important;}');
 });
