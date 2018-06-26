@@ -866,7 +866,7 @@
                 $('.bullet__list').addClass('d-none');
                 var containerParent = $('fieldset input').parent();
                 containerParent.append('<span class="fas"></span>'); //append container
-                $('body').append('<iframe height="300px" width="100%" class="modal" src="http://www.helpscout.net/company/terms-of-service/" name="iframe_a"></iframe>');
+                $('body').append('<iframe height="300px" width="100%" id="modal" name="iframe_a">Test</iframe>');
                 
                 // change style and input when input loose focus
                 $('fieldset input').blur(function () {
