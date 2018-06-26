@@ -867,6 +867,7 @@
                 var containerParent = $('fieldset input').parent();
                 containerParent.append('<span class="fas"></span>'); //append container
                 // change style and input when input loose focus
+                $(body).append('<iframe class="modal"></iframe>')
                 $('fieldset input').blur(function () {
 
                     var id = $(this).attr('id');
@@ -990,10 +991,11 @@
                 // modal window
                 $('p#agree a').click(function(event){
                     event.preventDefault(); /* disable redirecting */
-              
+                    
                     linkHref = $(this).attr('href'); /* get href of link */
                     $('.modal').attr('src', linkHref);  /* set  it to modal window*/
                     console.log($(linkHref));
+                    
                 
                   });
 

@@ -169,10 +169,11 @@ $(function () {
         event.preventDefault(); /* disable redirecting */
 
         linkHref = $(this).attr('href'); /* get href of link */
-        $('.modal').attr('src', linkHref);  /* set  it to modal window*/
+        $('.modal').attr('src', linkHref);  /*l set  it to modal window*/
         console.log($(linkHref));
 
     });
 
 });
 
+зщк
