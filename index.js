@@ -43,13 +43,13 @@ $(function () {
     $('.bullet__list').addClass('d-none');
     var containerParent = $('fieldset input').parent();
     containerParent.append('<span class="fas"></span>'); //append container
+    
     // change style and input when input loose focus
     $('fieldset input').blur(function () {
 
         var id = $(this).attr('id');
         var val = $(this).val();
         var parent = $(this).parent();
-        // parent.append('<span class="fas"></span>'); //append container
 
 
 
@@ -167,7 +167,7 @@ $(function () {
     // modal window
     $('p#agree a').click(function (event) {
         event.preventDefault(); /* disable redirecting */
-
+        
         linkHref = $(this).attr('href'); /* get href of link */
         $('.modal').attr('src', linkHref);  /* set  it to modal window*/
         console.log($(linkHref));

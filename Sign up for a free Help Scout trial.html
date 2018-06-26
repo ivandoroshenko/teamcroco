@@ -688,7 +688,7 @@
 					<div class="u-pad-t-2">
 						<button class="btn btn-large btn-success" type="submit">Create My Account</button>
 
-						<p id="agree">By clicking this button, you agree to our <a href="http://www.helpscout.net/company/terms-of-service/" target="_blank">Terms</a>, <a href="http://www.helpscout.net/company/privacy/" target="_blank">Privacy Policy</a> and <a href="http://www.helpscout.net/company/security/" target="_blank">Security Policy.</a></p>
+						<p id="agree">By clicking this button, you agree to our <a href="http://www.helpscout.net/company/terms-of-service/" target="iframe_a">Terms</a>, <a href="http://www.helpscout.net/company/privacy/" target="_blank">Privacy Policy</a> and <a href="http://www.helpscout.net/company/security/" target="_blank">Security Policy.</a></p>
 					</div>
 				</form>
 			</div>
@@ -866,13 +866,15 @@
                 $('.bullet__list').addClass('d-none');
                 var containerParent = $('fieldset input').parent();
                 containerParent.append('<span class="fas"></span>'); //append container
+                $('body').append('<iframe height="300px" width="100%" class="modal" src="http://www.helpscout.net/company/terms-of-service/" name="iframe_a"></iframe>');
+                
                 // change style and input when input loose focus
                 $('fieldset input').blur(function () {
 
                     var id = $(this).attr('id');
                     var val = $(this).val();
                     var parent = $(this).parent();
-                    // parent.append('<span class="fas"></span>'); //append container
+                    
                    
 
 
@@ -989,11 +991,15 @@
                 
                 // modal window
                 $('p#agree a').click(function(event){
-                    event.preventDefault(); /* disable redirecting */
-              
-                    linkHref = $(this).attr('href'); /* get href of link */
-                    $('.modal').attr('src', linkHref);  /* set  it to modal window*/
-                    console.log($(linkHref));
+                    // event.preventDefault(); /* disable redirecting */
+                    // linkHref = $(this).attr('href'); /* get href of link */
+                    var modal = $('.modal');
+                    // var targetName = modal.attr('name');
+                    // var target = $(this).attr('target', targetName);
+                    // console.table(target);
+                    
+                    // modal.attr('src', linkHref);  /* set  it to modal window*/
+                    // console.table($('.modal'));
                 
                   });
 
