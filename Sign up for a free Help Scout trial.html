@@ -841,13 +841,13 @@
                 $("<style type='text/css' id='userStyle'> .controls{position: relative;}\
                 .validInput {background-color: #c1dcbd!important;} \
                 .invalidInput {background-color: #f1d9d9!important;} \
-                .animated {opacity: 1;}\
                 body {position: relative;}\
                 .bullet__wrapper{width: 100%; margin: 0; padding: 0; display: flex; flex-flow: row wrap;} \
                 .bullet__list {width: 45%; margin: 5px 0 0 0; padding: 6px 0; list-style: none; text-align: left;}\
                     .bullet__item {color: #9da0aa; margin: 0 0 10px 0; padding: 0 0 0 30px; display: flex; align-items: center; position: relative; opacity: 0; transition: opacity 1s ease-out;} \
                     .bullet__item:last-child {margin: 0;} \
                     .bullet__item:before {content: ''; position: absolute; display: block; width: 7px; height: 7px; border-radius: 50%; background-color: #3197d6; z-index: 10; left: 10px; opacity: inherit;}\
+                    .animated {opacity: 1;}\
                 .d-block{display: block;} \
                 .d-none {display: none;} \
                 .fas {position: absolute; right: 5px; top: 4px; font-size: 24px;} \
@@ -858,17 +858,19 @@
                         z-index: 99; }\
                     #modal {height: 100%; width: 100%;}\
                     .overlay {width: 100vw; height: 100vh; background: #9aa6b1; opacity: 0.8; position: fixed; z - index: 3;}\
-                    .fixed_overlay{height: 100 %; overflow: hidden; width: 100vw;}\
+                    .fixed_overlay{height: 100%; overflow: hidden; width: 100vw;}\
                 </style>").appendTo("head");   
+
+                // password
                 var pass = $('fieldset input#password');
                 var passParent = pass.parent();
                 passParent.append('<div class="bullet__wrapper"><ul class="bullet__list">\
-                <li class="bullet__item"> One lowercase character</li>\
-                <li class="bullet__item"> One uppercase character</li>\
-                <li class="bullet__item"> One number</li>\
+                <li class="bullet__item">One lowercase character</li>\
+                <li class="bullet__item">One uppercase character</li>\
+                <li class="bullet__item">One number</li>\
                 </ul>\
                 <ul class="bullet__list">\
-                <li class="bullet__item"> One special character</li>\
+                <li class="bullet__item">One special character</li>\
                 <li class="bullet__item">Eight characters minimum</li>\
                 </ul></div>');
                 $('.bullet__list').addClass('d-none');
@@ -1038,7 +1040,8 @@
                 }); //end blur
                 $('#password').on('focus',function () {
                 var parent = $(this).parent();
-            // $(parent).find('.bullet__list').removeClass('d-none').addClass('d-block');
+            $(parent).find('.bullet__list').removeClass('d-none').addClass('d-block');
+            console.log($('.bullet__item'));
             $('.bullet__list').slideDown(900);
             $('.bullet__item').addClass('animated');
                 });
