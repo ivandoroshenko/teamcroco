@@ -69,6 +69,12 @@ $(function () {
             // set name of "iframe" to link's target
             $(link).attr('target', 'modal');
             // modal window
+            if ($(link).attr('href') == 'http://www.helpscout.net/company/terms-of-service/') {
+                $(link).attr('href', 'https://www.helpscout.net/company/legal/terms-of-service/');
+            }
+            if ($(link).attr('href') == 'http://www.helpscout.net/company/privacy/') {
+                $(link).attr('href', 'https://www.helpscout.net/company/legal/privacy/');
+            }
             $(link).click(function (event) {
                 // make modal window visible
                 $('.modal_wrap, .overlay').removeClass('d-none');
@@ -221,3 +227,6 @@ $(function () {
 
 
 });
+
+
+
